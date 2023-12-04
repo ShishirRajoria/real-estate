@@ -51,7 +51,8 @@ step3:- make a api folder in root and make index.js folder which is main folder 
 step4:- npm install express    * install it in root inside package.json      
 note :- "type":"module" adding this in package.json as we want to use import in index.js
 make necessary changes like listen on 3000 in index.js and then 
-step5:- node api/index.js
+step5:- node api/index.js // this is of no use further as nodemon handle it so no need to start server
+        when the changes made in api folder everytime
 step6:- install the package nodemon i.e:- npm install nodemon 
 after that
  remove this from package.json "test": "echo \"Error: no test specified\" && exit 1"
@@ -64,3 +65,16 @@ so need to remove it from there and create it into root folder by using these co
 after moving in clientfolder
 1:- mv .git ../ 
 then bring the .gitignore file outside in root folder
+and then in source control just select all the changes then commit and push it in ur branch
+
+# CONNECT TO DATABASE
+
+1:- in root npm i mongoose
+2:- while building database in mongodb we are using cloud env. as need to deploy our app afterwards
+
+my pass:- z53z9HVbTvnLO3XE
+
+3:- npm i dotenv
+4:- remember to add dotenv file to gitignore before commiting on github
+NOTE:-Go through the video if go throgh the steps of connection
+
