@@ -75,6 +75,7 @@ and then in source control just select all the changes then commit and push it i
 my pass:- z53z9HVbTvnLO3XE
 
 3:- npm i dotenv
-4:- remember to add dotenv file to gitignore before commiting on github
+4:-NOTE * remember to add dotenv file to gitignore before commiting on github
 NOTE:-Go through the video if go throgh the steps of connection
 
+# Create User Model
