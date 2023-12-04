@@ -1,0 +1,32 @@
+step 1:- install react.js with vite using command npm create vite@latest clientfolder
+         then we select reactjs and then javascript+swc not type script
+step:2:- go inside client folder
+         using cd command then npm i    
+step-3:- install tailwind vite css , go through for steps from it official web for vite and react              
+          1:-npm install -D tailwindcss postcss autoprefixer
+          2:-npx tailwindcss init -p
+          3:- npm run dev
+
+          for tailwind css if not find the suggestion just type ctrl+space
+step4:- adding github repository
+        in terminal but first ctrl+c to stop running
+        1:- git init :- to initialize the github repository
+        2:- git add .     
+        3:- git commit -m "any message"
+        4:- go to your github account and create new repository
+        5:- after creating repository then follow all the necessary command over there and use it in our terminal
+        6:- git remote add origin https://github.com/ShishirRajoria/real-estate.git (use different repo. 
+        whenever create new one)
+        7:- git branch -M main
+        8:- git push -u origin main
+ then just refreshing the page on github we get our code       
+ NOTE:- add final version after deploying it successfully to our github repo
+
+ # CREATE PAGES AND ROUTES
+step1:- add the pages in src folder
+step2:- npm install react-router-dom
+        then go to app.jsx and add all the pages within app.jsx
+
+        NOTE:- remember o commit the changes in our repository
+so to commit our code every time no need to do it from terminal every time 
+go to source control icon under search symbol in vs code and then go to our location of  in our desktop 
