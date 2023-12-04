@@ -30,3 +30,9 @@ step2:- npm install react-router-dom
         NOTE:- remember o commit the changes in our repository
 so to commit our code every time no need to do it from terminal every time 
 go to source control icon under search symbol in vs code and then go to our location of  in our desktop 
+
+# CREATE HEADER COMPONENT
+note:- we will make a mechanism to keep that header in all pages 
+after doing necessary changes 
+1:- install package react icons to use icon also i.e npm i react-icons
+NOTE:-import { Link } from "react-router-dom";//link used to go one page to another w/o refreshing the page
