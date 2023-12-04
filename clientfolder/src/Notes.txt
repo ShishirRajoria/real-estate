@@ -79,3 +79,8 @@ my pass:- z53z9HVbTvnLO3XE
 NOTE:-Go through the video if go throgh the steps of connection
 
 # Create User Model
+go throgh with the user.model.js
+
+# CREATE A TEST API ROUTE
+
+# CREATE 
