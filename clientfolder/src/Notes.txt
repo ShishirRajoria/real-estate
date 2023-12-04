@@ -36,3 +36,31 @@ note:- we will make a mechanism to keep that header in all pages
 after doing necessary changes 
 1:- install package react icons to use icon also i.e npm i react-icons
 NOTE:-import { Link } from "react-router-dom";//link used to go one page to another w/o refreshing the page
+in this we do work with only header section adjust some css and all adjust respective route on click 
+on them other functionality would be done afterwards
+
+# CREATE AND RUN THE SERVER
+NOTE:- we are going to make another folder named api and initialize the package json file here but need to do
+       in the root of our project not inside the api folder beacause when we deploy our website, the render
+       (where we are deploying rt now) platform check the root of our website and consider both our
+       frontend and backend, so package.json should be present inside of the root
+step1:- cd.. //so to be inside the root
+step2:- * npm init -y    
+step3:- make a api folder in root and make index.js folder which is main folder and package.json will 
+        found out thid file in api folder
+step4:- npm install express    * install it in root inside package.json      
+note :- "type":"module" adding this in package.json as we want to use import in index.js
+make necessary changes like listen on 3000 in index.js and then 
+step5:- node api/index.js
+step6:- install the package nodemon i.e:- npm install nodemon 
+after that
+ remove this from package.json "test": "echo \"Error: no test specified\" && exit 1"
+step7:-and add this scripts in package.json "dev":"nodemon api/index.js" and "start":"node api/index.js", 
+step8:- npm run dev will help to run the nodemon
+NOTE:- so with this setup we did not need to run the server again and again anymore
+
+now one change i have created my git repo in clientfolder which shoul be created in root folder
+so need to remove it from there and create it into root folder by using these commands
+after moving in clientfolder
+1:- mv .git ../ 
+then bring the .gitignore file outside in root folder
