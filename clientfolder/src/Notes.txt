@@ -83,4 +83,18 @@ go throgh with the user.model.js
 
 # CREATE A TEST API ROUTE
 
-# CREATE 
+# CREATE A SIGNUP API ROUTE
+# CREATE A MIDDLEWARE AND A FUNCTION TO HANDLE POSSIBLE ERRORS:- so there will be no need to create 
+try catch and response again and again 1:40
+# CREATE SIGNUP PAGE UI
+
+  server:{
+    proxy:{
+      '/api':{
+        target:'http://localhost:3000',
+        secure:false
+      },
+    },
+  }
+  we add this in vite.config.js this is how we create proxy and use it whenever required like here
+  using it while hitting api request
