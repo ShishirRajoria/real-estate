@@ -98,3 +98,11 @@ try catch and response again and again 1:40
   }
   we add this in vite.config.js this is how we create proxy and use it whenever required like here
   using it while hitting api request
+
+# CREAT A SIGNIN API
+1:-  Installing jwt token to generate a token by using command
+     npm install jsonwebtoken  
+     I have add JWT_SECRET key (random) in .env I need to add that special scret key afterwards to the 
+     platform  of deploying our application  
+2:- in cookie in response i have passed httpOnly:true :- which means no third party can acces our cookie,
+    next args is expiry time     
