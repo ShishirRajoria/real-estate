@@ -1,13 +1,20 @@
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  signInFailure,
+  signInStart,
+  signInSuccess,
+} from "../redux/user/userSlice";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({});
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { loading, error } = useSelector((state) => state.user); //this user is the name of the userSlice
+  // const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     // with using ...formData we keep the values of respective input even we are on the other i/p
@@ -17,12 +24,10 @@ const SignIn = () => {
     });
     console.log("FormData", formData);
   };
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true)
+      dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: {
@@ -32,17 +37,14 @@ const SignIn = () => {
       });
       const data = await res.json();
       console.log(data);
-      if(data.success === false ){
-        setLoading(false);
-        setError(data.message);
+      if (data.success === false) {
+        dispatch(signInFailure(data.message));
         return;
-      } 
-      setLoading(false);
-      setError(null);
-      navigate('/')
+      }
+      dispatch(signInSuccess(data));
+      navigate("/");
     } catch (err) {
-      setLoading(false);
-      setError(err.message);
+      dispatch(signInFailure(err.message));
       console.log("error", err);
     }
   };
@@ -65,8 +67,11 @@ const SignIn = () => {
           id="password"
           onChange={handleChange}
         />
-        <button disabled={loading} className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
-          {loading ? 'loading...':'Sign In'}
+        <button
+          disabled={loading}
+          className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+        >
+          {loading ? "loading..." : "Sign In"}
         </button>
       </form>
       <div className="flex gap-2 mt-5">
@@ -75,7 +80,7 @@ const SignIn = () => {
           <span className="text-blue-700 hover:opacity-95">Sign up</span>
         </Link>
       </div>
-      {error && <p className="text-red-500 mt-5">{error}</p> }
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 };

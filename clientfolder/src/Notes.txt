@@ -106,3 +106,15 @@ try catch and response again and again 1:40
      platform  of deploying our application  
 2:- in cookie in response i have passed httpOnly:true :- which means no third party can acces our cookie,
     next args is expiry time     
+# ADDING REDUX TOOLKIT
+npm install @reduxjs/toolkit react-redux // run this command in client side folder and  then 
+in src folder inside clientfolder just add store.js and the required configuration
+
+//remember gi through the docs in redux toolkit web app
+
+  middleware:(getDefaultMiddleware) => getDefaultMiddleware({
+  serializableCheck:false,//what this do is protect us from giving error for not serializing the variables
+        in future
+}),
+
+install redux dev tool in chrome chrome extension //important
