@@ -117,4 +117,14 @@ in src folder inside clientfolder just add store.js and the required configurati
         in future
 }),
 
-install redux dev tool in chrome chrome extension //important
+install redux dev toolkit in chrome chrome extension //important
+
+
+#REDUX PERSIST 
+***a special package to store the data we are required to store globally on our local storage means do not 
+loosing that data on refresh the page 
+
+npm install redux-persist
+
+note:-github copilot is responsible for providing code suggestion while coding
+      tabnine do the same but signin required

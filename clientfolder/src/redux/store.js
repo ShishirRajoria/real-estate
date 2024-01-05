@@ -1,17 +1,29 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducer from './user/userSlice'
+import {persistReducer,  persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+const rootReducer = combineReducers({
+  user:userReducer
+})//for using persist 
+
+const persistConfig = {
+  key:'root',
+  storage,
+  version:1
+}
+
+const persistedReducer = persistReducer(persistConfig,rootReducer)
 
 export const store = configureStore({
-  reducer: {
-   user:userReducer
-  },
+  reducer: persistedReducer,
   middleware:(getDefaultMiddleware) => getDefaultMiddleware({
     serializableCheck:false,
   }),
 
 })
 
-
+export const persistor =  persistStore(store);
 
 // This creates a Redux store, and also automatically 
 // configure the Redux DevTools extension so that you can inspect the store while developing.
